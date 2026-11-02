@@ -1,0 +1,131 @@
+// The six closets we build with clients — styling inspiration and editorial
+// showcases, separate from the three closet organization suites. "The Seasonal
+// Closet" is our existing seasonal changeover concept, preserved as the sixth.
+
+export const closetConcepts = [
+  {
+    number: "01",
+    slug: "style-closet",
+    name: "Style Closet",
+    kicker: "Everyday Style",
+    image: "closetStyle",
+    alt: "A stylist adjusting a black faux-fur vest over a white blouse on a client",
+    span: "sm:col-span-7",
+    ratio: "aspect-[4/3]",
+    blurb:
+      "Everyday confidence, built from what you already own. We put together modern, wearable outfits that suit your life — flattering, current, and easy to repeat.",
+    features: [
+      "Modern everyday outfits you'll actually repeat",
+      "Elevated basics and true wardrobe essentials",
+      "Well-fitted denim, blazers, knitwear and layering",
+      "Polished without ever feeling overdressed",
+    ],
+    cta: "Book A Style Session",
+    service: "style-debut",
+  },
+  {
+    number: "02",
+    slug: "event-closet",
+    name: "Event Closet",
+    kicker: "Evenings & Occasions",
+    image: "closetEvent",
+    alt: "A stylist holding a black and cream striped halter dress above a clothing rail",
+    span: "sm:col-span-5",
+    ratio: "aspect-[4/5]",
+    blurb:
+      "Occasion-ready outfits and sophisticated statement looks. Dresses, textures and a little sparkle, styled so you feel like the best version of yourself — never like a costume.",
+    features: [
+      "Sophisticated dresses and coordinated outfits",
+      "Tasteful statement pieces and sparkle",
+      "Evening looks with sequins and rich textures",
+      "Dinners, celebrations, anniversaries and nights out",
+      "Glamour for the occasions that matter most",
+    ],
+    cta: "Book A Style Session",
+    service: "style-debut",
+  },
+  {
+    number: "03",
+    slug: "personality-closet",
+    name: "Personality Closet",
+    kicker: "Your Point Of View",
+    image: "closetPersonality",
+    alt: "A smiling client styled in a black leather vest, a feathered white shawl and denim",
+    span: "sm:col-span-5",
+    ratio: "aspect-[4/5]",
+    blurb:
+      "Fashion that reflects the individual rather than following a single formula. Together we find what you love, what genuinely suits you, and how to wear it your way.",
+    features: [
+      "Modern, classic, edgy, feminine or relaxed",
+      "Individuality through silhouette, colour and texture",
+      "Accessories that finish the story",
+      "Wearable takes on what's current right now",
+    ],
+    cta: "Book A Style Session",
+    service: "style-debut",
+  },
+  {
+    number: "04",
+    slug: "getaway-closet",
+    name: "The Getaway Closet",
+    kicker: "Travel, Bridal & Honeymoon",
+    image: "closetGetaway",
+    alt: "A client trying on gold sandals while her stylist holds coordinating resort pieces",
+    span: "sm:col-span-7",
+    ratio: "aspect-[4/3]",
+    blurb:
+      "Packing gets easier when every piece earns its place. We plan polished travel outfits, destination looks and tasteful evening styling — including bridal and honeymoon wardrobes.",
+    features: [
+      "Chic vacation outfits, planned day by day",
+      "Versatile looks for sightseeing, dining and resorts",
+      "Mix-and-match travel capsules that pack light",
+      "Tasteful resort and destination styling",
+      "Bridal and honeymoon wardrobe inspiration",
+    ],
+    cta: "Book A Style Session",
+    service: "style-debut",
+  },
+  {
+    number: "05",
+    slug: "denim-denim",
+    name: "Denim Denim",
+    kicker: "Fits, Washes & Silhouettes",
+    image: "closetDenim",
+    alt: "A black heel worn with rhinestone-cuffed denim beside the Style In The City sign",
+    span: "sm:col-span-7",
+    ratio: "aspect-[4/3]",
+    blurb:
+      "Discover how the right denim can transform your wardrobe. Explore versatile fits and modern outfit combinations featuring brands such as Flying Monkey, Hidden, and Vervet, styled for everything from casual days to polished evenings.",
+    features: [
+      "Cuts, rises, washes and silhouettes that flatter",
+      "Jeans styled with blazers, elevated tops and knitwear",
+      "Casual daytime looks and polished evening combinations",
+      "One great pair, worn several different ways",
+    ],
+    note:
+      "Brand names appear as examples of denim we style with — not partnerships, sponsorships or retail arrangements.",
+    cta: "Book A Style Session",
+    service: "style-debut",
+  },
+  {
+    number: "06",
+    slug: "seasonal-closet",
+    name: "The Seasonal Closet",
+    kicker: "Changeover & Transition",
+    image: "closetSeasonal",
+    alt: "A closet organizer stacking folded sweaters on a rack during a seasonal changeover",
+    span: "sm:col-span-5",
+    ratio: "aspect-[4/5]",
+    blurb:
+      "Our seasonal changeover — the closet we've always built. We pack one season away, bring the next forward, and restyle what you already own instead of replacing it.",
+    features: [
+      "A seasonal changeover, worked through with you",
+      "Last season stored, this season brought forward",
+      "Transitional layering for unpredictable days",
+      "Genuine gaps spotted, duplicates retired",
+      "Pieces you'd forgotten, back in rotation",
+    ],
+    cta: "Book A Style Session",
+    service: "style-debut",
+  },
+];
