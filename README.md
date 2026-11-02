@@ -29,7 +29,7 @@ Old Base44 links `/love-your-style` and `/love-your-closet` redirect permanently
 
 ## Forms
 
-The booking and contact forms post to `/api/inquiry`, which emails the inquiry over SMTP (Hostinger mail). That endpoint arrives with the SMTP module.
+The booking and contact forms post to `/api/inquiry`, which emails the inquiry over SMTP (Hostinger mail). Configure the `SMTP_*` / `MAIL_*` variables from `.env.example` (Hostinger: `smtp.hostinger.com`, port 465, the mailbox address and its password). Inquiries arrive in `MAIL_TO` with Reply-To set to the visitor, so hitting Reply answers them directly. Spam protection: hidden honeypot field, minimum fill time, and per-IP rate limiting. An acknowledgement email to the visitor is available via `SEND_CONFIRMATION_EMAIL=true` but is off because the Contact page promises no autoresponders.
 
 ## Deployment
 
