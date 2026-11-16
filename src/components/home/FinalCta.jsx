@@ -23,9 +23,9 @@ export default function FinalCta() {
             style, we're here to help you take the first step.
           </p>
           <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-ivory/55">
-            Style Debut is {pricing.styleDebut.price} for three hours, additional styling time is{" "}
-            {pricing.additionalSessions.display}, and closet organization is quoted by the size of
-            your project.
+            Closet organization starts at {pricing.closetOrganization.from} and is priced by the size
+            of your closet. A Style Debut is {pricing.styleDebut.price} for three hours, and Style
+            Sessions are {pricing.styleSession.display}.
           </p>
           <div className="mt-11 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <CtaLink

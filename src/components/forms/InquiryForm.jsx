@@ -10,6 +10,7 @@ import {
 } from "@/components/forms/Field";
 import {
   closetScopeOptions,
+  isClosetService,
   emptyInquiry,
   formatOptions,
   serviceOptions,
@@ -197,7 +198,7 @@ export default function InquiryForm({ mode = "booking", initialService = "" }) {
             onChange={(event) => update("session_format", event.target.value)}
           />
 
-          {values.service === "closet-organization" && (
+          {isClosetService(values.service) && (
             <SelectField
               id="closet_scope"
               label="What are we working on?"

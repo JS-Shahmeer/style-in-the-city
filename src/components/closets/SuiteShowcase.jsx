@@ -5,28 +5,21 @@ import { Image } from "@/components/ui/image";
 import CtaLink from "@/components/site/CtaLink";
 import SectionLabel from "@/components/site/SectionLabel";
 import Reveal from "@/components/site/Reveal";
-import { closetSuites, SUITE_DISCLAIMER } from "@/lib/suites";
+import { closetSuites, DONATION_NOTE, LARGER_CLOSET_NOTE } from "@/lib/suites";
 import { BOOK_PATH, images, pricing } from "@/lib/siteConfig";
 
-/**
- * The three named closet organization suites. Pricing is quoted by project
- * size, so no dollar figures are attached to the suites themselves.
- */
+/** The three closet organization suites, each priced by closet size. */
 export default function SuiteShowcase() {
   return (
     <section id="suites" className="bg-espresso text-ivory">
       <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
         <Reveal className="max-w-3xl">
-          <SectionLabel tone="dark">Closet Organization Suites</SectionLabel>
+          <SectionLabel tone="dark">Closet Organization · Project Size</SectionLabel>
           <h2 className="display-xl mt-8 text-ivory">
             Three Suites. One Better Organized Closet.
           </h2>
           <p className="mt-7 text-[1.02rem] leading-relaxed text-ivory/75">
-            From a thoughtfully organized smaller closet to a more extensive wardrobe transformation,
-            we'll find the right approach for your space.
-          </p>
-          <p className="mt-5 text-[1rem] leading-relaxed text-ivory/60">
-            {pricing.closetOrganization.note}
+            Complete organization and declutter, priced by the size of your closet.
           </p>
         </Reveal>
 
@@ -43,23 +36,32 @@ export default function SuiteShowcase() {
                 </div>
 
                 <div className="mt-6 flex items-baseline justify-between gap-4 border-t border-ivory/20 pt-5">
-                  <span className="eyebrow text-ivory/55">Style inspiration: {suite.inspiration}</span>
+                  <span className="eyebrow text-ivory/55">{suite.kind}</span>
                   <span className="eyebrow text-ivory/35">{suite.size}</span>
                 </div>
 
                 <h3 className="display-md mt-5 text-ivory">{suite.name}</h3>
-                <p className="mt-5 text-[0.96rem] leading-relaxed text-ivory/70">{suite.copy}</p>
 
-                <p className="eyebrow mt-7 text-ivory/50">{pricing.closetOrganization.display}</p>
+                <div className="mt-5 flex items-baseline gap-4">
+                  <span className="font-heading text-[2rem] font-extrabold leading-none tracking-tight text-ivory">
+                    {suite.price}
+                  </span>
+                  <span className="eyebrow text-ivory/55">{suite.area}</span>
+                </div>
+
+                <p className="mt-5 text-[0.96rem] leading-relaxed text-ivory/70">{suite.copy}</p>
+                {suite.duration && (
+                  <p className="eyebrow mt-4 text-ivory/50">{suite.duration}</p>
+                )}
 
                 <div className="mt-auto pt-7">
                   <CtaLink
-                    to={`${BOOK_PATH}?service=closet-organization`}
+                    to={`${BOOK_PATH}?service=${suite.service}`}
                     variant="textLinkDark"
                     event="book_cta_click"
                     eventProps={{ location: `suite_${suite.slug}` }}
                   >
-                    Request A Quote
+                    Book This Suite
                   </CtaLink>
                 </div>
               </article>
@@ -67,24 +69,31 @@ export default function SuiteShowcase() {
           ))}
         </div>
 
-        <Reveal className="mt-16 flex flex-col gap-6 border-t border-ivory/20 pt-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-2xl text-[0.98rem] leading-relaxed text-ivory/70">
-            Not sure which suite fits your closet? Tell us about your space and we'll recommend the
-            right approach — and quote it honestly.
-          </p>
+        <Reveal className="mt-16 grid gap-8 border-t border-ivory/20 pt-10 md:grid-cols-3">
+          <div>
+            <p className="eyebrow text-ivory/50">Larger Closets</p>
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-ivory/70">{LARGER_CLOSET_NOTE}</p>
+          </div>
+          <div>
+            <p className="eyebrow text-ivory/50">Donations</p>
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-ivory/70">{DONATION_NOTE}</p>
+          </div>
+          <div>
+            <p className="eyebrow text-ivory/50">After Your Overhaul · {pricing.closetAddOn.display}</p>
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-ivory/70">{pricing.closetAddOn.note}</p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12">
           <CtaLink
             to={`${BOOK_PATH}?service=closet-organization`}
             variant="onDark"
             event="book_cta_click"
             eventProps={{ location: "suites_section" }}
           >
-            Find Your Closet Suite
+            Request A Closet Estimate
           </CtaLink>
-        </Reveal>
-
-        <p className="mt-8 max-w-2xl text-[0.8rem] leading-relaxed text-ivory/45">
-          {SUITE_DISCLAIMER}
-        </p>
+        </div>
       </div>
     </section>
   );

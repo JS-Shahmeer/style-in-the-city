@@ -13,7 +13,7 @@ export default function LoveYourself() {
   usePageMeta({
     title: "Love Yourself — Wellness & Beauty | Style In The City Studio",
     description:
-      "Feeling good goes beyond what you wear. Explore Trilivy Health Coach and Egalie Cosmetics, the wellness and beauty businesses featured by Style In The City Studio.",
+      "Feeling good goes beyond what you wear. Featuring Egalle Cosmetics Hair Care and Trilivy Metabolic Wellness: healthy hair sessions, metabolic reviews, and hair care and wellness parties.",
     path: "/love-yourself",
   });
 
@@ -25,11 +25,11 @@ export default function LoveYourself() {
         copy={loveYourself.intro}
         image={images.brandStory}
         imageAlt="Two stylists and a client laughing together in the studio after a session"
-        primaryLabel="Ask About These Brands"
-        primaryTo="/contact"
-        primaryEvent="love_yourself_contact"
-        secondaryLabel="Book a styling session"
-        secondaryTo={`${BOOK_PATH}?service=style-debut`}
+        primaryLabel="Book A Session"
+        primaryTo={`${BOOK_PATH}?service=hair-session`}
+        primaryEvent="love_yourself_book"
+        secondaryLabel="Ask a question"
+        secondaryTo="/contact"
         note={
           <p className="max-w-2xl border-l border-espresso/25 pl-5 text-[0.84rem] leading-relaxed text-espresso/55">
             {business.philosophy}
@@ -40,14 +40,13 @@ export default function LoveYourself() {
       <section className="border-t border-espresso/10 bg-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
           <Reveal className="max-w-3xl">
-            <SectionLabel>Two Destinations</SectionLabel>
+            <SectionLabel>Love Yourself Door</SectionLabel>
             <h2 className="display-lg mt-8 text-espresso">
-              The people we send you to when the work continues inside.
+              Healthy hair. A healthier you. Better with your girlfriends.
             </h2>
             <p className="mt-7 text-[1.02rem] leading-relaxed text-espresso/70">
-              We keep the studio's booking to styling and closet organization, and introduce the
-              wellness and beauty side of the philosophy here instead — so you always know whose
-              service you're booking.
+              Book a one-to-one session for yourself, or gather your gals for a Hair Care Party or a
+              Wellness Party — party booking fees go toward food and sips.
             </p>
           </Reveal>
         </div>
@@ -67,7 +66,7 @@ export default function LoveYourself() {
         <div className="mx-auto max-w-4xl px-5 py-20 text-center lg:px-10 lg:py-24">
           <p className="eyebrow text-ivory/45">How It Fits Together</p>
           <p className="display-lg mt-8 text-ivory">
-            Love your style. Love your closet. Love yourself.
+            Love your closet. Love your style. Love yourself.
           </p>
           <p className="mx-auto mt-8 max-w-2xl text-[0.98rem] leading-relaxed text-ivory/60">
             {loveYourself.relationshipNote}
@@ -78,7 +77,7 @@ export default function LoveYourself() {
       <CtaBand
         eyebrow="Your Next Step"
         title="Start with your style, or start with you."
-        copy="Book a Style Debut, ask us about closet organization, or simply ask which of these businesses is right for you — we'll point you honestly."
+        copy="Book a hair session, a metabolic review or a party for you and your girlfriends — or start with your closet or your style."
         primaryLabel="Book A Style Session"
         primaryTo={`${BOOK_PATH}?service=style-debut`}
         primaryEvent="book_cta_click"

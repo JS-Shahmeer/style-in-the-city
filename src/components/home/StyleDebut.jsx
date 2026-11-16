@@ -35,7 +35,7 @@ export default function StyleDebut() {
           </Reveal>
 
           <Reveal delay={0.06} className="lg:col-span-7">
-            <SectionLabel>Style Debut</SectionLabel>
+            <SectionLabel>New You — Style Debut</SectionLabel>
             <h2 className="display-lg mt-8 text-espresso">
               Your Style. Your Life. Your Starting Point.
             </h2>
@@ -53,9 +53,8 @@ export default function StyleDebut() {
             </div>
 
             <p className="mt-6 max-w-2xl text-[0.9rem] leading-relaxed text-espresso/55">
-              Three hours is the standard session. If your needs require less time or a different
-              session length, pricing will be adjusted accordingly — additional styling time is{" "}
-              {pricing.additionalSessions.rate} an hour.
+              A three-hour full wardrobe review and mini closet edit. Need less time, or just one
+              occasion? Book a Style Session at {pricing.styleSession.display}.
             </p>
 
             <div className="mt-12">

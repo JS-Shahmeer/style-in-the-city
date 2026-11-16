@@ -106,7 +106,7 @@ export default function ClosetOrganization() {
       <PageHero
         eyebrow="Love Your Closet"
         title="A Closet That Works For You."
-        copy="Your closet should make getting dressed easier. Let's clear the clutter, organize what you love, and create a space that feels functional, intentional, and completely yours — with three suites to choose from, always quoted by the size of your project."
+        copy="Your closet should make getting dressed easier. Let's clear the clutter, organize what you love, and create a space that feels functional, intentional, and completely yours — with three suites to choose from, priced by the size of your closet."
         image={images.closetSystem}
         imageAlt="A professional organizer reviewing a neatly organized closet system during a client session"
         primaryLabel="Book Your Session"
@@ -118,7 +118,7 @@ export default function ClosetOrganization() {
         note={
           <PendingNote>
             Bookings are confirmed personally — send your request and we'll agree the date, format,
-            and quote together.
+            and price together.
           </PendingNote>
         }
       />
@@ -225,7 +225,7 @@ export default function ClosetOrganization() {
                   Let's start with your closet.
                 </h3>
                 <p className="mt-3 max-w-xl text-[0.98rem] leading-relaxed text-espresso/70">
-                  Send a few details and we'll come back with timing and a personalized quote.
+                  Send a few details and we'll confirm your suite, timing and price.
                 </p>
               </div>
               <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
@@ -284,8 +284,7 @@ export default function ClosetOrganization() {
               </p>
             </div>
             <PendingNote tone="dark" className="mt-8">
-              We're developing our nonprofit partnerships and will name them here once they're
-              confirmed. Until then we won't claim a relationship that doesn't yet exist.
+              Any donations go towards non-profits, such as Dress for Success.
             </PendingNote>
           </Reveal>
           <div className="lg:col-span-7">

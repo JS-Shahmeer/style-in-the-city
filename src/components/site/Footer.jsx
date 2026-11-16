@@ -6,8 +6,8 @@ import Wordmark from "@/components/site/Wordmark";
 import { business, BOOK_PATH, hasValue, socialLinks } from "@/lib/siteConfig";
 
 const exploreLinks = [
-  { label: "Love Your Style", to: "/personal-styling" },
   { label: "Love Your Closet", to: "/closet-organization" },
+  { label: "Love Your Style", to: "/personal-styling" },
   { label: "Love Yourself", to: "/love-yourself" },
   { label: "Our Purpose", to: "/our-purpose" },
   { label: "Book a Session", to: BOOK_PATH },

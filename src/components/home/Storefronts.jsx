@@ -8,7 +8,7 @@ import StorefrontWindow from "@/components/home/StorefrontWindow";
 import { experiences } from "@/lib/experiences";
 import { BOOK_PATH } from "@/lib/siteConfig";
 
-/** The three studio doors: Love Your Style, Love Your Closet, Love Yourself. */
+/** The three studio doors: Love Your Closet, Love Your Style, Love Yourself. */
 export default function Storefronts() {
   return (
     <section id="storefronts" className="scroll-mt-24 bg-espresso text-ivory">
