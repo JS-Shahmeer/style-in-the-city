@@ -9,7 +9,7 @@ export const serviceOptions = [
   { value: "style-party", label: "Style Party — $99 minimum booking fee" },
   { value: "hair-session", label: "Egalle Healthy Hair Session — $20 booking fee" },
   { value: "hair-party", label: "Egalle Hair Care Party — $99 booking fee" },
-  { value: "metabolic-review", label: "Trilivy 1-on-1 Metabolic Review" },
+  { value: "metabolic-review", label: "Trilivy 1-on-1 Metabolic Review — $20 booking fee" },
   { value: "wellness-party", label: "Trilivy Wellness Party — $99 booking fee" },
   { value: "not-sure", label: "Not sure yet — help me choose" },
 ];

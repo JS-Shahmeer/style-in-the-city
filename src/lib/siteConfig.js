@@ -11,7 +11,7 @@ export const business = {
   philosophy: "Styling with a purpose. From the inside out.",
   supportLine:
     "Personal styling, closet organization, and a more personal approach to feeling good in what you wear.",
-  email: "hello@styleinthecityco.com",
+  email: "hello@styleinthecitystudio.com",
   phone: "720-703-2046",
   serviceArea:
     "Denver, Parker, Englewood, Lone Tree, Castle Rock, Castle Pines, Highlands Ranch, Centennial and surrounding Colorado communities.",
@@ -162,8 +162,9 @@ export const loveYourself = {
       offers: [
         {
           name: "1-on-1 Metabolic Review Session",
-          price: "Ask for pricing",
-          copy: "A one-to-one review of your metabolic health and where to begin.",
+          price: "$20 booking fee",
+          copy:
+            "A one-to-one review of your metabolic health and where to begin. The booking fee goes toward your purchase.",
           service: "metabolic-review",
         },
         {

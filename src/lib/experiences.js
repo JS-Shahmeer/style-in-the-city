@@ -47,7 +47,7 @@ export const experiences = [
       "Featuring Egalle Cosmetics Hair Care and Trilivy Metabolic Wellness — sessions for you, and parties for you and your girlfriends.",
     offers: [
       ["Egalle Healthy Hair Session", "$20"],
-      ["Trilivy Metabolic Review", "1-on-1"],
+      ["Trilivy 1-on-1 Metabolic Review", "$20"],
       ["Hair Care & Wellness Parties", "$99"],
     ],
     cta: "Explore Self-Care",
