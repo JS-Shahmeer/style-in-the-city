@@ -10,7 +10,7 @@ export const allFaqs = [
   {
     question: "Do I have to donate clothing?",
     answer:
-      "Never. Donation is entirely optional. If you'd like to pass pieces on, we'll prepare them for donation and talk through the delivery options available in your area. Anything you'd rather keep, sell, or think about later simply stays with you.",
+      "Never. Donation is entirely optional. Anything you choose to donate goes towards non-profits, such as Dress for Success. Anything you'd rather keep, sell, or think about later simply stays with you.",
   },
   {
     question: "Can I decide what stays in my closet?",
@@ -40,7 +40,7 @@ export const allFaqs = [
   {
     question: "How long does a session take?",
     answer:
-      "A Style Debut styling session is three hours, and additional styling time is booked by the hour at $99. Closet organization depends on the size of your space and how much we're working through — we'll give you a realistic estimate once we know more about your closet.",
+      "A Style Debut is three hours, and Style Sessions are booked by the hour. Closet organization depends on the size of your closet: a TownHouse Apt Closet takes up to 2 days, and a Penthouse Suite Closet up to 3 days depending on size and scope.",
   },
   {
     question: "Where do appointments take place?",
@@ -50,7 +50,7 @@ export const allFaqs = [
   {
     question: "How much do services cost?",
     answer:
-      "A Style Debut — our standard three-hour styling session — is $299. Additional styling sessions are $99 an hour, agreed with you before we start. Closet organization is based on the size of your project, so it's quoted personally once we know your space. You'll always have a clear figure before anything is confirmed, with no obligation.",
+      "Closet organization is priced by closet size: Studio Apt Closet (up to 24 sq ft) $495, TownHouse Apt Closet (25–36 sq ft) $1,295, and Penthouse Suite Closet (37–64 sq ft) $1,995. Larger closets get a photo or FaceTime estimate. Styling: New You — Style Debut $299 for three hours; Style Sessions $99 an hour in studio or $109 an hour at home; Perfect Denim District Fit $20 booking fee toward your denim. Additional styling after a closet overhaul is $79 an hour, and any materials such as hangers or organization tools are added to the final cost.",
   },
   {
     question: "How do I book a session?",

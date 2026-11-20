@@ -55,6 +55,16 @@ export default function StorefrontWindow({ experience }) {
       <div className="flex flex-1 flex-col border border-t-0 border-ivory/25 px-6 pb-8 pt-7 sm:px-7">
         <h3 className="display-md text-ivory">{experience.name}</h3>
         <p className="mt-4 text-[0.95rem] leading-relaxed text-ivory/65">{experience.copy}</p>
+        {experience.offers?.length > 0 && (
+          <ul className="mt-6 divide-y divide-ivory/15 border-y border-ivory/15">
+            {experience.offers.map(([name, price]) => (
+              <li key={name} className="flex items-baseline justify-between gap-4 py-2.5">
+                <span className="text-[0.86rem] text-ivory/80">{name}</span>
+                <span className="eyebrow shrink-0 text-[0.62rem] text-ivory/60">{price}</span>
+              </li>
+            ))}
+          </ul>
+        )}
         <span className="mt-7 inline-flex items-center gap-3 self-start font-body text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ivory">
           {experience.cta}
           <span

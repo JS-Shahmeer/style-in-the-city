@@ -12,16 +12,8 @@ import FaqAccordion from "@/components/site/FaqAccordion";
 import CtaLink from "@/components/site/CtaLink";
 import Reveal from "@/components/site/Reveal";
 import { stylingFaqs } from "@/lib/faqs";
-import { BOOK_PATH, images, pricing } from "@/lib/siteConfig";
-
-const GOALS = [
-  "Understanding your personal style",
-  "Reviewing the wardrobe pieces you already own",
-  "Creating outfit combinations you'll actually wear",
-  "Preparing for an upcoming event",
-  "Planning outfits for a vacation",
-  "Identifying your styling priorities and wardrobe gaps",
-];
+import { BOOK_PATH, business, hasValue, images, pricing } from "@/lib/siteConfig";
+import { styleParty, styleServices } from "@/lib/styleServices";
 
 const PROCESS = [
   "We start with a relaxed conversation about how you dress now and how you'd like to feel.",
@@ -76,7 +68,7 @@ export default function PersonalStyling() {
   usePageMeta({
     title: "Love Your Style — Personal Styling | Style In The City Studio",
     description:
-      "Personal styling that starts with you: a three-hour Style Debut for $299, plus additional styling sessions at $99 an hour. Built around the clothes you already own.",
+      "Personal styling that starts with you: a three-hour Style Debut for $299, a Perfect Denim District Fit, Style Sessions from $99 an hour, and Style Parties with your girlfriends.",
     path: "/personal-styling",
   });
 
@@ -96,8 +88,8 @@ export default function PersonalStyling() {
         secondaryTo="/closet-organization"
         note={
           <PendingNote>
-            Style Debut is our standard three-hour session at {pricing.styleDebut.price}. Additional
-            styling time is {pricing.additionalSessions.display}.
+            Style Debut is our three-hour session at {pricing.styleDebut.price}. Style Sessions are{" "}
+            {pricing.styleSession.display}.
           </PendingNote>
         }
       />
@@ -126,92 +118,67 @@ export default function PersonalStyling() {
       <section className="bg-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
           <Reveal className="max-w-3xl">
-            <SectionLabel>Ways To Work Together</SectionLabel>
+            <SectionLabel>Style Session Door</SectionLabel>
             <h2 className="display-lg mt-8 text-espresso">
-              Start with a Style Debut. Add time whenever you need it.
+              Three ways to book. One style that's yours.
             </h2>
           </Reveal>
 
-          <div className="mt-14 space-y-8">
-            <Reveal>
-              <div className="border border-espresso/15 bg-ivory p-8 sm:p-12">
-                <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-                  <div className="lg:col-span-7">
-                    <p className="eyebrow text-espresso/50">Start Here</p>
-                    <h3 className="display-md mt-5 text-espresso">Style Debut</h3>
-                    <div className="mt-6 inline-flex items-baseline gap-4 border border-espresso px-6 py-4">
-                      <span className="font-heading text-[1.8rem] font-extrabold leading-none tracking-tight text-espresso">
-                        {pricing.styleDebut.price}
-                      </span>
-                      <span className="eyebrow text-espresso/60">
-                        {pricing.styleDebut.duration} session
-                      </span>
-                    </div>
-                    <p className="mt-6 text-[1rem] leading-relaxed text-espresso/70">
-                      A personalized three-hour styling session designed around you. Whether you're
-                      refreshing your everyday look, preparing for a special occasion, or getting
-                      ready for a vacation, we'll focus on your style, your wardrobe, and what you
-                      want to achieve. Sessions can happen in your home — we'll arrange the details
-                      with you when you book.
-                    </p>
-                    <div className="mt-8">
-                      <CtaLink
-                        to={`${BOOK_PATH}?service=style-debut`}
-                        event="book_cta_click"
-                        eventProps={{ location: "styling_style_debut" }}
-                      >
-                        Book Your Style Debut
-                      </CtaLink>
-                    </div>
-                  </div>
-                  <div className="lg:col-span-5">
-                    <p className="eyebrow text-espresso/45">What we can work on</p>
-                    <div className="mt-5">
-                      <CheckList items={GOALS} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.05}>
-              <div className="grid gap-10 border border-espresso/15 bg-ivory p-8 sm:p-12 lg:grid-cols-12 lg:gap-12">
-                <div className="lg:col-span-7">
-                  <p className="eyebrow text-espresso/50">More Support</p>
-                  <h3 className="display-md mt-5 text-espresso">Additional Style Sessions</h3>
-                  <div className="mt-6 inline-flex items-baseline gap-4 border border-espresso px-6 py-4">
-                    <span className="font-heading text-[1.8rem] font-extrabold leading-none tracking-tight text-espresso">
-                      {pricing.additionalSessions.rate}
+          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+            {styleServices.map((item, index) => (
+              <Reveal key={item.slug} delay={index * 0.06} className="h-full">
+                <div id={item.slug} className="flex h-full flex-col border border-espresso/15 bg-ivory p-8 sm:p-10">
+                  <p className="eyebrow text-espresso/45">{item.number}</p>
+                  <h3 className="display-sm mt-5 text-espresso">{item.name}</h3>
+                  <div className="mt-6 inline-flex flex-wrap items-baseline gap-x-3 gap-y-1 self-start border border-espresso px-5 py-3">
+                    <span className="font-heading text-[1.6rem] font-extrabold leading-none tracking-tight text-espresso">
+                      {item.price}
                     </span>
-                    <span className="eyebrow text-espresso/60">
-                      {pricing.additionalSessions.unit}
-                    </span>
+                    <span className="eyebrow text-[0.6rem] text-espresso/60">{item.unit}</span>
                   </div>
-                  <p className="mt-6 text-[1rem] leading-relaxed text-espresso/70">
-                    Continue working with Lisa on your personal style, wardrobe, or upcoming plans
-                    with additional styling sessions at a straightforward hourly rate. No
-                    memberships, no bundles — just the time you actually need.
-                  </p>
-                  <div className="mt-8">
+                  <p className="mt-6 text-[0.98rem] leading-relaxed text-espresso/70">{item.copy}</p>
+                  <div className="mt-auto pt-8">
                     <CtaLink
-                      to={`${BOOK_PATH}?service=additional-session`}
-                      variant="textLink"
+                      to={`${BOOK_PATH}?service=${item.service}`}
+                      variant={index === 0 ? "primary" : "textLink"}
                       event="book_cta_click"
-                      eventProps={{ location: "styling_additional_sessions" }}
+                      eventProps={{ location: `styling_${item.slug}` }}
                     >
-                      Ask About A Style Session
+                      {item.cta}
                     </CtaLink>
                   </div>
                 </div>
-                <div className="lg:col-span-5">
-                  <PendingNote>
-                    Three hours is the standard Style Debut session. If your needs require less time
-                    or a different session length, pricing will be adjusted accordingly.
-                  </PendingNote>
-                </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
+
+          <Reveal className="mt-8">
+            <div id="style-party" className="grid gap-8 bg-espresso p-8 text-ivory sm:p-12 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-8">
+                <p className="eyebrow text-ivory/50">{styleParty.tagline}</p>
+                <h3 className="display-md mt-5 text-ivory">{styleParty.name}</h3>
+                <p className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ivory/70">{styleParty.copy}</p>
+              </div>
+              <div className="flex flex-col items-start gap-4 lg:col-span-4 lg:items-end">
+                <CtaLink
+                  to={`${BOOK_PATH}?service=${styleParty.service}`}
+                  variant="onDark"
+                  event="book_cta_click"
+                  eventProps={{ location: "styling_style_party" }}
+                >
+                  Book A Style Party
+                </CtaLink>
+                {hasValue(business.phone) && (
+                  <a
+                    href={`tel:${business.phone.replace(/[^0-9+]/g, "")}`}
+                    className="text-[0.9rem] text-ivory/70 underline underline-offset-4 hover:text-ivory"
+                  >
+                    Call {business.phone} for pricing
+                  </a>
+                )}
+              </div>
+            </div>
+          </Reveal>
 
           <Reveal className="mt-14 border-t border-espresso/15 pt-10">
             <p className="eyebrow text-espresso/50">What Clients Book Styling Time For</p>
@@ -289,7 +256,7 @@ export default function PersonalStyling() {
       <CtaBand
         eyebrow="Your Next Step"
         title="Let's find your style — starting with what's in your closet."
-        copy={`Book a three-hour Style Debut for ${pricing.styleDebut.price}, or ask about additional styling time at ${pricing.additionalSessions.display}.`}
+        copy={`Book a three-hour Style Debut for ${pricing.styleDebut.price}, or a Style Session at ${pricing.styleSession.display}.`}
         primaryLabel="Book Your Style Debut"
         primaryTo={`${BOOK_PATH}?service=style-debut`}
         primaryEvent="book_cta_click"

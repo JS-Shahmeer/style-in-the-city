@@ -20,8 +20,8 @@ export default function HeroSection() {
           <h1 className="display-hero mt-8 text-espresso">Style In The City Studio</h1>
 
           <p className="display-md mt-7 leading-[1.12] text-espresso/85">
-            <span className="block">Love Your Style.</span>
             <span className="block">Love Your Closet.</span>
+            <span className="block">Love Your Style.</span>
             <span className="block">Love Yourself.</span>
           </p>
 

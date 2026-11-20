@@ -107,7 +107,7 @@ export function buildConfirmationEmail(inquiry) {
 
 Thank you for getting in touch with Style In The City Studio. Your request is with us, and we'll reply personally to talk through the details and confirm timing. Nothing is booked, and nothing is charged, until we've spoken.
 
-Love your style, Love your closet, Love Yourself.
+Love your closet, Love your style, Love Yourself.
 Style In The City Studio`;
   const html = `<!doctype html><html><body style="margin:0;background:#f7f7f7;font-family:Helvetica,Arial,sans-serif;color:#000">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:24px 0"><tr><td align="center">
@@ -117,7 +117,7 @@ Style In The City Studio`;
 <p style="margin:0 0 14px">Hi ${escapeHtml(firstName)},</p>
 <p style="margin:0 0 14px">Thank you for getting in touch with Style In The City Studio. Your request is with us, and we'll reply personally to talk through the details and confirm timing.</p>
 <p style="margin:0 0 22px">Nothing is booked, and nothing is charged, until we've spoken.</p>
-<p style="margin:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#737373;font-weight:600">Love your style, Love your closet, Love Yourself.</p>
+<p style="margin:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#737373;font-weight:600">Love your closet, Love your style, Love Yourself.</p>
 </td></tr></table></td></tr></table></body></html>`;
   return { subject, text, html };
 }

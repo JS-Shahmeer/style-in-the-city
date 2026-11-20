@@ -112,7 +112,7 @@ export default function Navbar() {
               Book A Session
             </Link>
             <p className="eyebrow pb-10 pt-8 text-center text-[0.55rem] text-espresso/40">
-              Love Your Style · Love Your Closet · Love Yourself
+              Love Your Closet · Love Your Style · Love Yourself
             </p>
           </nav>
         </div>

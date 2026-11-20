@@ -51,7 +51,7 @@ export default function Wordmark({ tone = "light", withTagline = true, className
             dark ? "text-ivory/45" : "text-espresso/40"
           )}
         >
-          Love Your Style · Love Your Closet · Love Yourself
+          Love Your Closet · Love Your Style · Love Yourself
         </span>
       )}
     </Link>

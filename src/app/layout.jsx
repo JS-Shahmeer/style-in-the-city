@@ -28,7 +28,7 @@ export const metadata = {
     template: "%s | Style In The City Studio",
   },
   description:
-    "Love your style, love your closet, love yourself. Personal styling, closet organization, and curated wellness and beauty for women who want a wardrobe — and a routine — that works.",
+    "Love your closet, love your style, love yourself. Personal styling, closet organization, and curated wellness and beauty for women who want a wardrobe — and a routine — that works.",
   applicationName: SITE_NAME,
   robots: { index: true, follow: true },
   openGraph: { siteName: SITE_NAME, type: "website" },

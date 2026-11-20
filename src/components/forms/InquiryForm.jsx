@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AlertCircle } from "lucide-react";
 import {
   CheckboxField,
@@ -10,6 +10,7 @@ import {
 } from "@/components/forms/Field";
 import {
   closetScopeOptions,
+  isClosetService,
   emptyInquiry,
   formatOptions,
   serviceOptions,
@@ -17,7 +18,7 @@ import {
 } from "@/lib/inquiryOptions";
 import { trackEvent } from "@/lib/analytics";
 import { submitInquiry } from "@/lib/submitInquiry";
-import { BOOK_PATH } from "@/lib/siteConfig";
+import { BOOK_PATH, business } from "@/lib/siteConfig";
 
 const COPY = {
   booking: {
@@ -44,6 +45,16 @@ export default function InquiryForm({ mode = "booking", initialService = "" }) {
   const submitted = useRef(false);
   const started = useRef(false);
   const startedAt = useRef(Date.now());
+  const errorRef = useRef(null);
+
+  // The error banner sits at the top of a long form, so bring it into view
+  // after a failed send instead of leaving the button looking unresponsive.
+  useEffect(() => {
+    if (status === "error" && errorRef.current) {
+      errorRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      errorRef.current.focus({ preventScroll: true });
+    }
+  }, [status]);
   const honeypot = useRef(null);
   const formRef = useRef(null);
 
@@ -130,13 +141,15 @@ export default function InquiryForm({ mode = "booking", initialService = "" }) {
     <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-8">
       {status === "error" && (
         <div
+          ref={errorRef}
+          tabIndex={-1}
           role="alert"
           className="flex items-start gap-3 border border-espresso/40 bg-espresso/[0.04] px-5 py-4"
         >
           <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-espresso" strokeWidth={1.5} />
           <p className="text-[0.9rem] leading-relaxed text-espresso/80">
-            Something interrupted that send — your details weren't stored. Please try again, or
-            reach us through the contact page.
+            Something interrupted that send, so your message didn't reach us. Please try again, or
+            email {business.email} or call {business.phone}.
           </p>
         </div>
       )}
@@ -197,7 +210,7 @@ export default function InquiryForm({ mode = "booking", initialService = "" }) {
             onChange={(event) => update("session_format", event.target.value)}
           />
 
-          {values.service === "closet-organization" && (
+          {isClosetService(values.service) && (
             <SelectField
               id="closet_scope"
               label="What are we working on?"
@@ -291,7 +304,7 @@ export default function InquiryForm({ mode = "booking", initialService = "" }) {
 
       <div className="flex flex-col gap-5 pt-2 sm:flex-row sm:items-center">
         <button type="submit" disabled={status === "submitting"} className={submitClass}>
-          {status === "submitting" ? "Sending…" : COPY[mode].submit}
+          {status === "submitting" ? "Sending…" : status === "error" ? "Try Again" : COPY[mode].submit}
         </button>
         <p className="text-[0.82rem] leading-relaxed text-espresso/55">
           {mode === "contact" ? COPY.contact.note : COPY[mode].note}

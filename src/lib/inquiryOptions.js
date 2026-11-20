@@ -1,14 +1,26 @@
 export const serviceOptions = [
-  { value: "closet-organization", label: "Closet Organization — a suite for my space" },
-  { value: "style-debut", label: "Style Debut — $299 three-hour style session" },
-  { value: "additional-session", label: "Additional Style Session — $99 per hour" },
+  { value: "closet-studio", label: "Studio Apt Closet — $495 (up to 24 sq ft)" },
+  { value: "closet-townhouse", label: "TownHouse Apt Closet — $1,295 (25–36 sq ft)" },
+  { value: "closet-penthouse", label: "Penthouse Suite Closet — $1,995 (37–64 sq ft)" },
+  { value: "closet-organization", label: "Closet Organization — not sure of the size / larger than 64 sq ft" },
+  { value: "style-debut", label: "New You — Style Debut — $299 (3 hours)" },
+  { value: "denim-fit", label: "Perfect Denim District Fit — $20 booking fee" },
+  { value: "style-session", label: "Style Session — $99/hr in studio · $109/hr at home" },
+  { value: "style-party", label: "Style Party — $99 minimum booking fee" },
+  { value: "hair-session", label: "Egalle Healthy Hair Session — $20 booking fee" },
+  { value: "hair-party", label: "Egalle Hair Care Party — $99 booking fee" },
+  { value: "metabolic-review", label: "Trilivy 1-on-1 Metabolic Review — $20 booking fee" },
+  { value: "wellness-party", label: "Trilivy Wellness Party — $99 booking fee" },
   { value: "not-sure", label: "Not sure yet — help me choose" },
 ];
 
+export const isClosetService = (value) => typeof value === "string" && value.startsWith("closet-");
+
 export const closetScopeOptions = [
-  "A single closet",
-  "A closet plus dresser or storage",
-  "Multiple closets or rooms",
+  "Small non-walk-in (up to 24 sq ft)",
+  "Small walk-in (25–36 sq ft)",
+  "Large walk-in (37–64 sq ft)",
+  "Larger than 64 sq ft — I'd like a photo / FaceTime estimate",
   "Not sure yet",
 ];
 

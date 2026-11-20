@@ -46,7 +46,7 @@ export default function ServiceAreaPanel({ tone = "light" }) {
           <p className={dark ? "eyebrow text-ivory/50" : LABEL}>Investment</p>
           <p className="mt-5 text-[1rem] leading-relaxed">
             {hasValue(startingPrice)
-              ? `Closet organization from ${startingPrice}.`
+              ? `Closet organization from ${startingPrice}, priced by the size of your closet. Larger than 64 sq ft? We'll estimate from photos or a quick FaceTime.`
               : "Request a personalized quote. Every closet is a different size, so we quote each project individually — with no obligation and nothing to pay before we've spoken."}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function ServiceAreaPanel({ tone = "light" }) {
           event="book_cta_click"
           eventProps={{ location: "service_area_panel" }}
         >
-          Request A Personalized Quote
+          Book Your Closet Session
         </CtaLink>
       </div>
     </div>

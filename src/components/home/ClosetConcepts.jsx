@@ -36,7 +36,7 @@ export default function ClosetConcepts() {
           <p className="max-w-2xl text-[0.98rem] leading-relaxed text-espresso/70">
             Two halves of one studio: the closets you wear, and the closet itself. If your wardrobe
             needs the space itself sorted out first, that's our closet organization work — three
-            suites, always quoted by the size of your project.
+            suites, priced by the size of your closet from $495.
           </p>
           <CtaLink to="/closet-organization" variant="textLink">
             See The Three Closet Suites

@@ -7,12 +7,12 @@
 export const business = {
   name: "Style In The City Studio",
   shortName: "Style In The City",
-  tagline: "Love your style, Love your closet, Love Yourself.",
+  tagline: "Love your closet, Love your style, Love Yourself.",
   philosophy: "Styling with a purpose. From the inside out.",
   supportLine:
     "Personal styling, closet organization, and a more personal approach to feeling good in what you wear.",
-  email: "hello@styleinthecityco.com",
-  phone: "(303) 505-3753",
+  email: "hello@styleinthecitystudio.com",
+  phone: "720-703-2046",
   serviceArea:
     "Denver, Parker, Englewood, Lone Tree, Castle Rock, Castle Pines, Highlands Ranch, Centennial and surrounding Colorado communities.",
   hours: null, // e.g. "Monday to Saturday, by appointment"
@@ -24,7 +24,7 @@ export const business = {
     tiktok: null,
   },
   pricing: {
-    closetOrganizationFrom: null, // confirmed per project, never a flat figure
+    closetOrganizationFrom: "$495", // Studio Apt Closet
     deposit: null, // e.g. "A 25% deposit confirms your date"
     cancellation: null, // e.g. "Reschedule up to 48 hours before your session"
   },
@@ -33,27 +33,43 @@ export const business = {
 // Confirmed pricing, shown the same way everywhere on the site.
 export const pricing = {
   styleDebut: {
+    name: "New You — Style Debut",
     price: "$299",
     duration: "3 hours",
-    display: "$299 · 3-Hour Style Session",
+    display: "$299 · 3-Hour Style Debut",
     short: "$299",
   },
-  additionalSessions: {
-    rate: "$99",
+  styleSession: {
+    studio: "$99",
+    home: "$109",
     unit: "per hour",
-    display: "$99 / hour",
-    short: "$99",
+    display: "$99/hour in studio · $109/hour at home",
+  },
+  denimFit: {
+    fee: "$20",
+    display: "$20 booking fee, applied to your denim purchase",
+  },
+  styleParty: {
+    fee: "$99",
+    display: "Call for pricing · $99 minimum booking fee",
+  },
+  closetAddOn: {
+    rate: "$79",
+    display: "$79 / hour",
+    note:
+      "Additional styling sessions booked after your closet overhaul are $79 an hour. Any materials needed — hangers, organization tools and so on — are added to the final cost.",
   },
   closetOrganization: {
-    display: "Priced by project size",
+    display: "Priced by closet size",
+    from: "$495",
     note:
-      "Every closet is a different size, so closet organization is quoted individually once we know your space — with no obligation.",
+      "Every closet is priced by its size. Larger than 64 sq ft? Send us photos or book a quick FaceTime review and we'll put together an estimate.",
   },
 };
 
 export const announcement = {
   enabled: true,
-  message: "Love your style, Love your closet, Love Yourself.",
+  message: "Love your closet, Love your style, Love Yourself.",
 };
 
 // Analytics integration points. Each loads only when an ID is entered.
@@ -105,35 +121,62 @@ export const images = {
 // once its official destination has been confirmed with the studio.
 export const loveYourself = {
   intro:
-    "Feeling good about yourself goes beyond what you wear. Explore wellness and beauty experiences that complement your personal journey and your own approach to self-care.",
+    "Feeling good about yourself goes beyond what you wear. Featuring Egalle Cosmetics Hair Care and Trilivy Metabolic Wellness — book a session for yourself, or bring your girlfriends for a party.",
   relationshipNote:
-    "Trilivy Health Coach and Egalie Cosmetics are independent businesses. We feature them as recommended destinations — their services, products and terms are their own.",
+    "Egalle Cosmetics and Trilivy are independent businesses featured by the studio. Their products, programs and terms are their own.",
   brands: [
     {
-      slug: "trilivy-health-coach",
-      name: "Trilivy Health Coach",
-      shortName: "Trilivy",
-      discipline: "Health Coaching",
+      slug: "egalle-cosmetics",
+      name: "Egalle Cosmetics Hair Care",
+      shortName: "Egalle",
+      discipline: "Hair Care",
       copy:
-        "Metabolic health coaching built around nutrition, daily habits and coach-led support — the inside-out half of the studio's philosophy.",
-      detail: "Programs, coaching options and availability are set by Trilivy directly.",
-      cta: "Discover Trilivy",
-      pendingCta: "Ask About Trilivy",
-      // Confirm this is the correct destination for the studio's Trilivy coach.
-      url: "https://www.trilivyhealth.com/",
-      image: null, // official brand mark or photography, once supplied
+        "Featuring Egalle Hair Care from Absoluk, Ohanic and ANEA — all vegan or organic based, from the Aragon region of Spain. High-end products from Dr Jackson are available for men, too.",
+      offers: [
+        {
+          name: "Healthy Products — Healthy Hair Session",
+          price: "$20 booking fee",
+          copy:
+            "A hair analysis and product recommendations to fill your hair and scalp with the vitamins and nutrients they need to look and feel their best.",
+          service: "hair-session",
+        },
+        {
+          name: "Hair Care Party",
+          price: "$99 booking fee",
+          copy:
+            "Grab your gals for an unbelievable hair party. The booking fee goes toward food and sips.",
+          service: "hair-party",
+        },
+      ],
+      url: null, // official destination to be confirmed
+      image: null,
     },
     {
-      slug: "egalie-cosmetics",
-      name: "Egalie Cosmetics",
-      shortName: "Egalie",
-      discipline: "Beauty",
+      slug: "trilivy-metabolic-wellness",
+      name: "Trilivy Metabolic Wellness",
+      shortName: "Trilivy",
+      discipline: "Metabolic Wellness",
+      tagline: "Reset Your Gut. Reset Your Health. Regain Your Life.",
       copy:
-        "Beauty to finish the look — the last few considered minutes of getting ready, and a natural companion to a wardrobe you love.",
-      detail: "Products, ingredients and purchasing are provided by Egalie Cosmetics directly.",
-      cta: "Explore Egalie",
-      pendingCta: "Ask About Egalie",
-      url: null, // official destination to be confirmed
+        "Metabolic wellness built around your gut, your habits and your health — the inside-out half of the studio's philosophy.",
+      offers: [
+        {
+          name: "1-on-1 Metabolic Review Session",
+          price: "$20 booking fee",
+          copy:
+            "A one-to-one review of your metabolic health and where to begin. The booking fee goes toward your purchase.",
+          service: "metabolic-review",
+        },
+        {
+          name: "Wellness Party",
+          price: "$99 booking fee",
+          copy:
+            "Bring your gals for a metabolic review and a taste of the Trilivy way of life. The booking fee goes toward food and sips.",
+          service: "wellness-party",
+        },
+      ],
+      // Confirm this is the correct destination for the studio's Trilivy coach.
+      url: "https://www.trilivyhealth.com/",
       image: null,
     },
   ],
@@ -146,8 +189,8 @@ export const socialLinks = () =>
   Object.entries(business.social).filter(([, url]) => hasValue(url));
 
 export const NAV_LINKS = [
-  { label: "Love Your Style", to: "/personal-styling" },
   { label: "Love Your Closet", to: "/closet-organization" },
+  { label: "Love Your Style", to: "/personal-styling" },
   { label: "Love Yourself", to: "/love-yourself" },
   { label: "Our Purpose", to: "/our-purpose" },
   { label: "Contact", to: "/contact" },

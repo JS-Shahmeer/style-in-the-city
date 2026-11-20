@@ -8,7 +8,6 @@ import ProcessSteps from "@/components/site/ProcessSteps";
 import EditorialGallery from "@/components/site/EditorialGallery";
 import ServiceAreaPanel from "@/components/site/ServiceAreaPanel";
 import CtaBand from "@/components/site/CtaBand";
-import CtaLink from "@/components/site/CtaLink";
 import SuiteShowcase from "@/components/closets/SuiteShowcase";
 import SectionLabel from "@/components/site/SectionLabel";
 import PendingNote from "@/components/site/PendingNote";
@@ -25,41 +24,6 @@ const FRUSTRATIONS = [
   "Beautiful things you forgot you owned because you can't see them.",
   "No idea what to keep, what to fix, and what to let go of.",
   "The dread of getting dressed on an ordinary morning.",
-];
-
-const BENEFITS = [
-  {
-    title: "A calmer start to the day",
-    copy: "When you can see what you own, getting dressed stops being a negotiation and becomes a two-minute decision.",
-  },
-  {
-    title: "More value from what you own",
-    copy: "Pieces you'd stopped wearing come back into rotation, so you shop your own closet instead of replacing it.",
-  },
-  {
-    title: "Decisions you won't regret",
-    copy: "We sort thoughtfully and at your pace — nothing leaves your home unless you're certain it should.",
-  },
-];
-
-const SESSION_SHAPE = [
-  "We talk through your wardrobe, your routine, and what you'd love to change before we touch a single hanger.",
-  "We work side by side — you stay in control of every keep, restyle, or donate decision.",
-  "Everything is grouped in a way that matches how you actually get dressed.",
-  "Clothing, shoes and accessories each get a place they belong.",
-  "We agree what happens next with anything you're ready to let go of.",
-  "You finish with a closet you can maintain without us — and a simple plan if you'd like us back.",
-];
-
-const SCOPE = [
-  "Wardrobe decluttering, done with you",
-  "Categorising by type, colour and season",
-  "Closet layout and flow optimisation",
-  "Folding and hanging systems that hold up",
-  "Shoes and accessory organisation",
-  "Seasonal wardrobe transitions",
-  "Keep, donate and reconsider sorting",
-  "Donation preparation and agreed delivery",
 ];
 
 const GALLERY = [
@@ -106,7 +70,7 @@ export default function ClosetOrganization() {
       <PageHero
         eyebrow="Love Your Closet"
         title="A Closet That Works For You."
-        copy="Your closet should make getting dressed easier. Let's clear the clutter, organize what you love, and create a space that feels functional, intentional, and completely yours — with three suites to choose from, always quoted by the size of your project."
+        copy="Your closet should make getting dressed easier. Let's clear the clutter, organize what you love, and create a space that feels functional, intentional, and completely yours — with three suites to choose from, priced by the size of your closet."
         image={images.closetSystem}
         imageAlt="A professional organizer reviewing a neatly organized closet system during a client session"
         primaryLabel="Book Your Session"
@@ -117,8 +81,8 @@ export default function ClosetOrganization() {
         secondaryHref="#process"
         note={
           <PendingNote>
-            Bookings are confirmed personally — send your request and we'll agree the date, format,
-            and quote together.
+            Three suites from $495, priced by closet size. Larger than 64 sq ft? We'll estimate from
+            photos or a FaceTime review.
           </PendingNote>
         }
       />
@@ -138,33 +102,6 @@ export default function ClosetOrganization() {
       </section>
 
       <SuiteShowcase />
-
-      <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-          <Reveal className="max-w-3xl">
-            <SectionLabel>What Changes</SectionLabel>
-            <h2 className="display-lg mt-8 text-espresso">
-              Organized outside. Easier inside.
-            </h2>
-            <p className="mt-6 text-[1.02rem] leading-relaxed text-espresso/70">
-              People expect a tidier closet. What they don't expect is how much lighter the whole
-              morning feels once it's done.
-            </p>
-          </Reveal>
-          <div className="mt-14 grid gap-10 sm:grid-cols-3">
-            {BENEFITS.map((benefit, index) => (
-              <Reveal key={benefit.title} delay={index * 0.08}>
-                <div className="border-t border-espresso/15 pt-6">
-                  <h3 className="display-sm text-espresso">{benefit.title}</h3>
-                  <p className="mt-4 text-[0.95rem] leading-relaxed text-espresso/65">
-                    {benefit.copy}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="process" className="bg-espresso text-ivory">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
@@ -201,71 +138,6 @@ export default function ClosetOrganization() {
         </div>
       </section>
 
-      <section className="bg-ivory">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-          <Reveal className="max-w-3xl">
-            <SectionLabel>During Your Session</SectionLabel>
-            <h2 className="display-lg mt-8 text-espresso">
-              What it actually looks like.
-            </h2>
-          </Reveal>
-          <div className="mt-10 max-w-4xl">
-            <CheckList items={SESSION_SHAPE} numbered />
-          </div>
-          <div className="mt-10">
-            <PendingNote>
-              Session length is agreed with you once we know the size of your space — we'll give you
-              a realistic estimate before the day rather than an arbitrary number.
-            </PendingNote>
-          </div>
-          <Reveal className="mt-14 border-t border-espresso/15 pt-10">
-            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h3 className="display-md">
-                  Let's start with your closet.
-                </h3>
-                <p className="mt-3 max-w-xl text-[0.98rem] leading-relaxed text-espresso/70">
-                  Send a few details and we'll come back with timing and a personalized quote.
-                </p>
-              </div>
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                <CtaLink
-                  to={`${BOOK_PATH}?service=closet-organization`}
-                  event="book_cta_click"
-                  eventProps={{ location: "closet_midpage" }}
-                >
-                  Book Your Session
-                </CtaLink>
-                <CtaLink to="/contact" variant="textLink">
-                  Ask a question
-                </CtaLink>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-t border-espresso/10 bg-ivory">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-          <Reveal className="max-w-3xl">
-            <SectionLabel>What We Can Cover</SectionLabel>
-            <h2 className="display-lg mt-8 text-espresso">
-              Everything in your wardrobe, nothing you don't want.
-            </h2>
-          </Reveal>
-          <div className="mt-10">
-            <CheckList items={SCOPE} columns={2} />
-          </div>
-          <div className="mt-10">
-            <PendingNote>
-              We organize and arrange the closet you already have. We don't install custom cabinetry,
-              carpentry, or storage products unless the business confirms those services — ask and
-              we'll tell you honestly what's possible.
-            </PendingNote>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-espresso text-ivory">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-12 lg:gap-16 lg:px-10 lg:py-24">
           <Reveal className="lg:col-span-5">
@@ -284,8 +156,7 @@ export default function ClosetOrganization() {
               </p>
             </div>
             <PendingNote tone="dark" className="mt-8">
-              We're developing our nonprofit partnerships and will name them here once they're
-              confirmed. Until then we won't claim a relationship that doesn't yet exist.
+              Any donations go towards non-profits, such as Dress for Success.
             </PendingNote>
           </Reveal>
           <div className="lg:col-span-7">
