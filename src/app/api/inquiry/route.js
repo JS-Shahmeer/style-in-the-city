@@ -113,7 +113,7 @@ export async function POST(request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("[inquiry] send failed:", error.message);
+    console.error("[inquiry] send failed:", error.code || "", error.responseCode || "", error.message);
     return NextResponse.json(
       { ok: false, error: "We couldn't send your request just now." },
       { status: 502 }
